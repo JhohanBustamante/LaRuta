@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio de Sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contenedor {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    img {
+      width: 150px;
+      margin-top: 40px;
+    }
+
+    h2 {
+      margin-top: 30px;
+    }
+
+    .grupo {
+      margin-bottom: 20px;
+    }
+
+    .etiqueta {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .campo {
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn-iniciar {
+      background-color: orange;
+      border: none;
+      padding: 12px 24px;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-iniciar:hover {
+      background-color: darkorange;
+    }
+
+    .registro {
+      margin-top: 20px;
+    }
+
+    .registro a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .registro a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <img src="/Proyecto/RegistroLaRuta/logo de la ruta.png" alt="Logo La Ruta"> <!-- Cambia por tu logo real -->
+
+    <h2>Iniciar sesión</h2>
+
+    <form action="inicio_sesion.php" method="POST">
+      <div class="grupo">
+        <label class="etiqueta" for="usuario">Apodo o correo</label>
+        <input class="campo" type="text" id="entrada_usuario" name="entrada_usuario" required>
+      </div>
+
+      <div class="grupo">
+        <label class="etiqueta" for="password">Contraseña</label>
+        <input class="campo" type="password" id="contrasena_usuario" name="contrasena_usuario" required>
+      </div>
+
+      <button type="submit" class="btn-iniciar">Iniciar sesión</button>
+    </form>
+
+    <div class="registro">
+      ¿No tienes una cuenta? <a href="/Proyecto/RegistroLaRuta/registro.html"> Regístrate aquí</a>
+
+    </div>
+  </div>
+</body> 
+</html>

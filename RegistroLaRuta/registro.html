@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de la ruta</title>
+  <link rel="stylesheet" href="la_ruta.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .login-container {
+      width: 95%;
+      max-width: 800px;
+      margin: 80px auto;
+      background-color: white;
+      padding: 50px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 40px auto;
+      border-radius: 8px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      margin: 10px auto;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: block;
+}
+
+    h1 {
+      font-size: 20px;
+      margin-top: 25px;
+      color: #333;
+      text-align: left;
+      margin-left: 10%;
+    }
+
+    button {
+      width: 50%;
+      padding: 14px;
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    .registro {
+      margin-top: 20px;
+    }
+
+    .registro a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .registro a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <form action="registro.php" method="post" onsubmit="return validarContrasenas()">
+    <div class="login-container">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <img src="logo de la ruta.png" alt="Logo" class="logo" />
+
+      <h1>Información personal</h1>
+      <input type="text" placeholder="Primer nombre" name="nombre_usuario" id="nombre_usuario" required />
+      <input type="text" placeholder="Segundo nombre" name="nombre_2_usuario" id="nombre_2_usuario" />
+      <input type="text" placeholder="Primer apellido" name="apellido_usuario" id="apellido_usuario" required />
+      <input type="text" placeholder="Segundo apellido" name="apellido_2_usuario" id="apellido_2_usuario" />
+
+      <h1>Información de inicio</h1>
+      <input type="text" placeholder="Apodo" name="apodo_usuario" id="apodo_usuario" required />
+      <input type="email" placeholder="Correo electrónico" name="correo_usuario" id="correo_usuario" required />
+      <input type="password" placeholder="Contraseña" name="contrasena_usuario" id="contrasena_usuario" required />
+      <input type="password" placeholder="Confirma la contraseña" name="validacion_contraseña_usuario" id="validacion_contrasena_usuario" required />
+
+      <h1>Ubicación y fecha de nacimiento</h1>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
+
+      <select id="sexo" name="sexo" required>
+        <option value="">Selecciona tu sexo</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <select id="localidad" name="localidad" required>
+        <option value="">Selecciona tu localidad</option>
+        <option value="Ant">Antonio Nariño</option>
+        <option value="Us">Usaquén</option>
+        <option value="Ch">Chapinero</option>
+        <option value="Sa">Santa Fe</option>
+        <option value="Us">Usme</option>
+        <option value="Tu">Tunjuelito</option>
+        <option value="Bo">Bosa</option>
+        <option value="Ke">Kennedy</option>
+        <option value="Fonti">Fontibón</option>
+        <option value="En">Engativá</option>
+        <option value="Sub">Suba</option>
+        <option value="Bar">Barrios Unidos</option>
+        <option value="Teus">Teusaquillo</option>
+        <option value="Losm">Los Mártires</option>
+        <option value="Pue">Puente Aranda</option>
+        <option value="Lac">La Candelaria</option>
+        <option value="Raf">Rafael Uribe Uribe</option>
+        <option value="Ciu">Ciudad Bolívar</option>
+        <option value="Sum">Sumapaz</option>
+      </select>
+        
+        <label style="text-align: left; display: block; margin-top: 20px; font-size: 14px;">
+        <input type="checkbox" id="acepta_politica" required />
+        Acepto la <a href="politica.html" target="_blank">política de manejo de datos</a>.
+      </label>
+      <button type="submit" >INICIAR REGISTRO</button>
+      <div class="registro">
+        <br>
+        ¿Tienes una cuenta?  <a href="/Proyecto/inicio_sesion/inicio_sesion.html"> Inicia sesión</a>
+        
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function validarContrasenas() {
+      const pass = document.getElementById("contrasena_usuario").value;
+      const confirmPass = document.getElementById("validacion_contrasena_usuario").value;
+      if (pass !== confirmPass) {
+        alert("Las contraseñas no coinciden.");
+        return false;
+      }
+      if (!acepta) {
+       alert("Debes aceptar la política de manejo de datos.");
+       return false;
+  }
+      return true;
+    }
+  </script>
+  
+</body>
+</html>
+

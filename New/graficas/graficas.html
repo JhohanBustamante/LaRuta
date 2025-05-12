@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficos</title>
+    <link rel="stylesheet" href="clases.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+     <h1>Graficos</h1>
+     <canvas id="barChart"></canvas>
+     <script>
+        async function obtenerDatos() {                   //obtiene los datos del archivo json
+            const respuesta = await fetch("http://localhost/proyecto/new/graficas/consumo.php");       //guarda la respuesta en una variable 
+            const datos = await respuesta.json();
+            console.table(datos);
+            return datos.ventas;
+        }
+        async function generarGrafico(){
+            const ventas = await obtenerDatos();
+            // extraer los datos de las ventas
+            const etiquetas = ventas.map(v => v.mes);
+            const valores = ventas.map(v => v.ventas);
+            console.info("Info de valores");
+            console.table(valores);
+        
+        new Chart(document.getElementById("barChart"), {
+            type: "bar",
+            data: {
+                labels: etiquetas,
+                datasets: [{
+                    label: "Ventas por mes",
+                    data: valores,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                }]
+            },
+        }); 
+    }
+    generarGrafico();
+     </script>
+</body>
+</html>
