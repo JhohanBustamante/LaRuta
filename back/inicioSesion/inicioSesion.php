@@ -1,6 +1,6 @@
 <?php
 
-include '../conexion_base_datos/conexion.php';
+include '../conexion/conexion.php';
 
 $entrada_usuario = $_POST['entrada_usuario'];
 $contrasena_usuario = $_POST['contrasena_usuario'];
@@ -15,11 +15,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {  
-    $url = "http://localhost/Proyecto/blog/blog.html";
+    $url = "http://localhost/Proyecto/Front/blog/blog.html";
     echo "<script>window.location.href = '$url';</script>";
     exit();
 } else {
-    $url = "http://localhost/Proyecto/inicio_sesion/error_inicio.html"; 
+    $url = "http://localhost/Proyecto/front/inicioSesion/errorInicio.html"; 
     echo "<script>window.location.href = '$url';</script>";
     exit();
 }

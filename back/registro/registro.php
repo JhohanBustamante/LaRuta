@@ -1,5 +1,5 @@
 <?php
-include '../conexion_base_datos/conexion.php';
+include '../conexion/conexion.php';
 
 // Obtener datos del formulario
 $nombre_usuario = $_POST['nombre_usuario'];
@@ -18,7 +18,7 @@ $sql = "INSERT INTO usuario (nombre, correo, apellido, apodo, sexo, nacimiento, 
        '$contrasena_usuario','$nombre_2_usuario','$apellido_2_usuario')";
 
 if ($mysqli->query($sql) === TRUE) {  
-    header("Location:/proyecto/registrolaruta/confirmacion_registro.html");
+    header("Location:/proyecto/front/registro/confirmacionRegistro.html");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $mysqli->error;
