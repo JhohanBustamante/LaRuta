@@ -10,7 +10,7 @@
   <img src="/proyecto/front/recursos/imagenes/500.jpg" alt="error 500" style="width:600px; max-width:100%; margin-top:20px;">
 
   <br><br>
-  <a href="/Proyecto/front/inicioSesion/inicioSesion.html" style="text-decoration:none; background:#007BFF; color:#fff; padding:10px 20px; border-radius:5px;">
+  <a href="../../front/inicioSesion/inicioSesion.html" style="text-decoration:none; background:#007BFF; color:#fff; padding:10px 20px; border-radius:5px;">
     Volver al inicio
   </a>
 </html>
