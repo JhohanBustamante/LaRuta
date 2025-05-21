@@ -1,0 +1,32 @@
+body{
+    background-color: rgba(18, 113, 168, 0.23);
+}
+
+body nav.navbar{
+    background-color:rgb(18, 113, 168) !important;
+}
+
+body nav.navbar a#tituloNav{
+    margin-left:50px;
+}
+
+body nav.navbar li{
+    padding-left: 80px;
+    padding-bottom: 15px;
+    padding-top:20px;
+}
+
+body nav.navbar a{
+    color:white !important ;
+    font-weight: bold;
+}
+
+body nav.navbar li.nav-item label{
+    color:white !important ;
+    font-weight: bold !important;  
+}
+
+body div.row {
+    margin-top:20px;
+    background-color: rgba(42, 80, 102, 0.158);
+}
