@@ -6,6 +6,12 @@ body nav.navbar{
     background-color:rgb(18, 113, 168) !important;
 }
 
+body nav.navbar img{
+    margin-left:20px;
+    width:100px;
+    height:100px;
+}
+
 body nav.navbar a#tituloNav{
     margin-left:50px;
 }
@@ -29,4 +35,34 @@ body nav.navbar li.nav-item label{
 body div.row {
     margin-top:20px;
     background-color: rgba(42, 80, 102, 0.158);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+body div.mostrarCont{
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+}
+
+body div.mb-3.oculto{
+    display: none;
+}
+
+body div.mostrarCont:hover > div.mb-3.oculto{
+    display:flex;
+}
+
+body div.mostrarContDos{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+body div.mb-3.ocultoDos{
+    display: none;
+}
+
+body div.mostrarContDos:hover > div.mb-3.ocultoDos{
+    display:flex;
+}
+
+
