@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta datos</title>
+</head>
+<body>
+    <h1><center>Usuario a consultar</h1></center>
+    <form action="consultadatos.php" name="" method="POST">
+      <table border="0" align="center">
+        <tr>
+          <td>
+            Nombre de usuario:
+          </td>
+          <td>
+            <label for="nick"></label>
+            <input type="text" name="nick" id="nick" required  />
+          </td>
+        </tr>        
+        <tr>
+          <td align="center">
+            <input
+              type="submit"
+              name="enviar"
+              id="enviar"
+              value="Consulta"
+            />
+          </td>
+          <td align="center">
+            <input type="reset" name="borrar" id="borrar" value="Restablecer" />
+          </td>
+        </tr>
+      </table></form>
+</body>
+</html>
