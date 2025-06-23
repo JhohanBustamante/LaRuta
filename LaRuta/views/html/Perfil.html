@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Perfil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/inicioSesion.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <img src="../../resources/logoLaRuta.jpg" class="img-thumbnail" alt="...">
-        <a id="tituloNav" class="navbar-brand" href="./index.html">Perfil</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a id="tituloNav" class="navbar-brand" href="./index.html">Blog Personal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -49,23 +54,249 @@
                         Notificaciones
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             99+
-                        <span class="visually-hidden">mss</span>
-                      </span>
+                            <span class="visually-hidden">mss</span>
+                        </span>
                     </button>
                 </li>
             </ul>
         </div>
     </nav>
-    
+<main>
     <div class="container">
-        <div class="row">
-                  
-        </div>
-    </div>
+        <div class="row" id="fichaUsuario">
+            <div class=" col-12 col-md-4 col-lg-4" id="contenedorSecundario">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        href="#list-home" role="tab" aria-controls="list-home">Perfil</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                        href="#list-profile" role="tab" aria-controls="list-profile">Crear publicación</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                        href="#list-settings" role="tab" aria-controls="list-settings">Tus publicaciones</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-8" id="Contenedor principal">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                        aria-labelledby="list-home-list">
+                        <div class="mostrarCont col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
+                            id="contenedorDatosUsuario">
+                            <div id="IdUsuario" class="card">
+                                <!-- contenedor de la foto de perfil y sus datos -->
+                                <img src="/LaRuta/resources/Fotoperfil.jpg" class="card-img-top" alt="..."
+                                    id="foto_perfil">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="nombreUser">Kevin López</h5><br>
+                                    <h6 class="card-title">Descripción:</h6>
+                                    <p class="card-text">Me gusta el ejercicio porque es algo que me aposiona hacer para
+                                        conseguir
+                                        mis metas y por ultimo VLLC</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> 
+                                    <!--Aqui ya falta el link para modificar el perfil-->
+                                </div>
+                                <!--Para que al modificar perfil, despliegue el form cambiar #collapseWidthExample-->
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseWidthExample2" aria-expanded="false"
+                                        aria-controls="collapseWidthExample" id="botonDtPv">
+                                        Modificar perfil
+                                    </button>
+
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseWidthExample" aria-expanded="false"
+                                        aria-controls="collapseWidthExample" id="botonDtPv">
+                                        Datos privados y públicos
+                                    </button>
+                                </p>
+                                <div style="min-height: 120px;">
+                                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                                        <div class="card card-body" id="CardMostrarDatos">
+                                            <div id="DatosPrivados" class="card border-primary "
+                                                style="margin: 0 auto;">
+                                                <!--Contenedor datos privados-->
+                                                <div class="card-header">Tus datos 🔒</div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Fisico</h5>
+                                                    <p class="card-text">Año de nacimiento:
+                                                    <p class="card-text" id="añoEsta">2007</p>
+                                                    </p>
+                                                    <p class="card-text">Altura:</p>
+                                                    <p class="card-text" id="alturaUser">1.80</p>
+                                                    <p class="card-text">Peso: 60</p>
+                                                    <!--contenedor datos públicos-->
+                                                    <div class="card-header"> Datos públicos 🌐</div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Tus datos públicos</h5>
+                                                        <p class="card-text">Metas: Ganar masa muscular y mantener un
+                                                            estilo de vida
+                                                            saludable.
+                                                        </p>
+                                                        <p class="card-text">Intereses:</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Fitness</li>
+                                                            <li class="list-group-item">Nutrición</li>
+                                                        </ul>
+                                                        <p class="card-text">Comunidades:</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Inicia Force🐺</li>
+                                                            <li class="list-group-item">Alpha Zone🦁</li>
+                                                        </ul>
+                                                        <p class="card-text">Deportes que practico:</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Fútbol</li>
+                                                            <li class="list-group-item">Boxeo</li>
+                                                        </ul>
+                                                        <p class="card-text">Ejercicios:</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Calistenia</li>
+                                                        </ul>
+                                                        </ul>
+                                                        <p class="card-text">Intereses nutricionales:</p>
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item">Comida casera y sin
+                                                                ultraprocesados</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse collapse-horizontal" id="collapseWidthExample2">
+                                        <div class="card card-body" id="CardMostrarDatos2">
+                                            <div id="DatosPrivados2" class="card border-primary "
+                                                style="margin: 0 auto;">
+                                                <!--Contenedor datos privados-->
+                                                <div class="card-header">Modificar perfil 🔒</div>
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <!--Campo para cambiar nombre del usuario-->
+                                                        <label for="exampleInputEmail1" class="form-label">Actualiza tu
+                                                            nombre de usuario</label>
+                                                        <input type="text" class="form-control" id="ActualizacionNombre"
+                                                            aria-describedby="emailHelp">
+                                                        <div id="emailHelp" class="form-text">Por favor agrega un nombre
+                                                            respetuoso</div>
+                                                        <!--Campo para cambiar año de nacimiento -->
+                                                        <label for="exampleInputEmail1" class="form-label">Actualiza tu
+                                                            año de nacimiento</label>
+                                                        <input type="text" class="form-control" id="ActualizacionAño"
+                                                            aria-describedby="emailHelp">
+                                                        <!--Campo para cambiar altura -->
+                                                        <label for="exampleInputEmail1" class="form-label">Actualiza tu
+                                                            altura</label>
+                                                        <input type="text" class="form-control" id="ActualizacionAltura"
+                                                            aria-describedby="emailHelp">
+
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputPassword1" class="form-label">Confirma
+                                                            tu contraseña</label>
+                                                        <input type="password" class="form-control"
+                                                            id="exampleInputPassword1">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="exampleCheck1" required>
+                                                        <label class="form-check-label" for="exampleCheck1">¿estas
+                                                            seguro de actualizar los datos?</label>
+                                                    </div>
+                                                    <button type="button" class="btn btn-primary"
+                                                        onclick="Actdatos()">Actualizar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+                        <div class="card mb-12 col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8" id="ContenedorCreacion">
+                            <!--Creación del contenedor de la derecha que contiene form para subir nueva publicación y ultima públicación-->
+                            <div class="card-body mostrarCont">
+                                <!--Creación del contenedor pra crear nueva publicación-->
+                                <h5 class="card-title">¿Algo nuevo para compartir?</h5>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Cuéntanos cómo te mantienes enfocado 🎯</label>
+                                    <div class="mb-3">
+                                        <label for="formFileMultiple" class="form-label">Añade archivos a tu publicación</label>
+                                        <input class="form-control" type="file" id="formFileMultiple" multiple><br>
+                                        <button type="button" class="btn btn-primary">Publicar</button>
+                                    </div>
+                                </div>
+                                <!--Contener de ultima publicación-->
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        <!--contenedor para publicaciones-->
+
+                        <div class="card card-body" id="Tus_publicaciones">
+                            <div class="card mb-12 col-12 col-sm-12 col-md-6 col-lg-6 col-8 col-xl-4"
+                                style="margin: 0 auto;" id="Publicaciones">
+                                <img src="/LaRuta/resources/imgGymTres.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">💪 ¡Hoy es un buen día para entrenar! 🔥</h5>
+
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        Ver más </button>
+                                    </p>
+                                    <div class="collapse" id="collapseExample">
+                                        <p class="card-text">No importa si estás empezando o si llevas años en el
+                                            camino, cada gota
+                                            de sudor
+                                            cuenta.
+                                            Recuerda: no se trata de ser el mejor, se trata de ser mejor que ayer.
+
+                                            🏋️‍♂️ ¿Ya hiciste tu rutina de hoy?
+                                            🎯 Enfócate. Respira. Empuja. ¡Tú puedes!
+
+                                            ✅ Si necesitas ayuda con tu plan de entrenamiento o nutrición,
+                                            ¡escríbenos!
+                                            Estamos aquí para acompañarte en cada paso del camino.
+
+                                            #GymLife #EntrenaConNosotros #FitnessMotivation #SaludYFuerza
+                                            #TransformaTuCuerpo
+
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary">Actualizado hace 3
+                                                minutos</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+</main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <script src="prueba.js"></script>
 
 </body>
+
 </html>

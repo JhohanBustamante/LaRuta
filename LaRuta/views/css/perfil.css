@@ -1,0 +1,198 @@
+body div.container div.card {
+   border-radius: 10px;
+   width: 60%;
+}
+
+body div.container div.card div.text-bg-light {
+   border-radius: 10px;
+   width: 60%;
+}
+
+.card.border-primary.mb-3 {
+   border-radius: 10px;
+   padding: 20px;
+   width: 100%;
+}
+
+#botonModPrf {
+   margin-left: 0px;
+}
+#DatosPrivados{
+   padding: 10px;
+   width: 100%;
+}
+#DatosPrivados2{
+   padding: 10px;
+   width: 100%;
+}
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+   #ultimaPublicación {
+      width: 100%;
+   }
+
+   #IdUsuario {
+      margin-left: 0px;
+      width: 95%;
+   }
+
+   #foto_perfil {
+      width: 25%;
+      margin-left: 300px;
+   }
+
+   #ContenedorCreacion {
+      margin-left: 10px;
+      width: 95%;
+   }
+
+   #CardMostrarDatos {
+      width: 100%;
+   }
+
+   #Tus_publicaciones {
+      width: 95%;
+   }
+
+   #CardMostrarDatos2 {
+      width: 100%;
+   }
+   #Publicaciones{
+      width: 95%;
+   }
+}
+
+@media (max-width: 991px) and (min-width: 500px) {
+   #contenedorDatosUsuario{
+      margin-top: 10px;
+   }
+
+   #ContenedorCreacion {
+      width: 100%;
+      margin-top: 10px;
+   }
+
+   #botonDtPv {
+      margin-top: 10px;
+      margin-left: 10px;
+   }
+
+   #ultimaPublicación {
+      width: 100%;
+   }
+
+   #IdUsuario {
+      width: 100%;
+   }
+
+   #ContenedorCreacion {
+      margin-left: 10px;
+      width: 95%;
+   }
+
+   #Tus_publicaciones {
+      width: 100%;
+      margin-top: 10px;
+   }
+
+   #CardMostrarDatos {
+      width: 100%;
+   }
+
+   #collapseWidthExample2 {
+      width: 100%;
+   }
+
+   #CardMostrarDatos2 {
+      width: 100%;
+   }
+
+   #Publicaciones {
+      width: 100%;
+   }
+
+   #DatosPrivados {
+      width: 100%;
+   }
+
+}
+
+@media (max-width: 499px) {
+   #list-tab {
+      width: 100%;
+   }
+
+   #fichaUsuario {
+      width: 100%;
+      margin-left: 0px;
+   }
+
+
+   div#ContenedorCreacion {
+      margin-left: 0px;
+      width: 100%;
+      margin-top: 15px;
+   }
+
+
+   #contenedorDatosUsuario {
+      width: 100%;
+      padding: auto;
+   }
+
+   #IdUsuario {
+      margin-left: 0px;
+      width: 100%;
+      margin-top: 15px;
+   }
+
+   .container {
+      padding-left: 0;
+      padding-right: 0;
+   }
+
+   #Publicaciones {
+      width: 90%;
+   }
+
+   #Fila_publicaciones {
+      width: 300px;
+      margin-left: 40px;
+   }
+
+   #ultimaPublicación {
+      width: 100%;
+   }
+
+   #Tus_publicaciones {
+      margin-top: 15px;
+      width: 100%;
+   }
+
+   #CardMostrarDatos {
+      width: 100%;
+   }
+
+   #collapseWidthExample2 {
+      width: 100%;
+   }
+
+   #CardMostrarDatos2 {
+      width: 100%;
+      padding: 10px;
+   }
+
+   #DatosPrivados {
+      width: 100%;
+   }
+
+   .row {
+      width: 100%;
+   }
+}
