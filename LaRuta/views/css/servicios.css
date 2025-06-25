@@ -7,8 +7,22 @@
 }
 
 .card {
-    width: 100%;
-    height: 100%;
+    height: 500px;
+    padding-bottom: 4rem;
+   overflow-y: auto;
+  overflow-x: hidden;
+    margin-top: 10px;
+
+}
+
+.btn {
+    width: 95px;
+    height: 40px;
+
+}
+
+.btones {
+    background-color: azure;
 }
 
 @media (max-width: 991px) and (min-width: 500px) {
