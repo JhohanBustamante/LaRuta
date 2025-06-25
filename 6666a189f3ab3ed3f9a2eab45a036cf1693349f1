@@ -1,0 +1,84 @@
+[33mcommit 6666a189f3ab3ed3f9a2eab45a036cf1693349f1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mrevisionCalidad[m[33m)[m
+Author: Jhohan B <jhohantma@gmail.com>
+Date:   Wed May 21 22:29:08 2025 -0500
+
+    Act de QA primer commit desde Desarrollador1
+
+[33mcommit 3d8a2125b22ac3b7991f21e3fdbb9d8a7146cf76[m[33m ([m[1;31morigin/desarrollador1[m[33m)[m
+Author: Yeinner19 <yeinnerramirez417@gmail.com>
+Date:   Wed May 21 22:19:19 2025 -0500
+
+    Yei - cambio de titulo de barra de favoritos
+
+[33mcommit 2eb39d46daca09795952515155d3ef9f6b126b68[m
+Author: Yeinner19 <yeinnerramirez417@gmail.com>
+Date:   Wed May 21 22:15:18 2025 -0500
+
+    Yei - Primer commit rama desarrollador1 acoplada a la version de main
+
+[33mcommit d649a470de7d2579087e3e32fa265c7f3231d5a3[m
+Author: Jhohan B <jhohantma@gmail.com>
+Date:   Wed May 21 21:25:44 2025 -0500
+
+    Actualización rama principal para ejemplos
+
+[33mcommit 4214fe7ff8e969784dab6d9775ee0012f5f7183e[m[33m ([m[1;31morigin/revisionCalidad[m[33m, [m[1;31morigin/ProductOwner[m[33m, [m[1;32mProductOwner[m[33m)[m
+Author: Jhohan B <jhohantma@gmail.com>
+Date:   Wed May 21 17:57:48 2025 -0500
+
+    Se añade estructuración simple de varios documentos html, se añade logo
+
+[33mcommit d8167fb8837a438f2c3a3a0afea615c20354fd63[m
+Author: Jhohan B <jhohantma@gmail.com>
+Date:   Wed May 21 11:49:40 2025 -0500
+
+    Se añade inicio de sesión, vista, sin terminar
+
+[33mcommit a6abc20a373bd4c5e2e8135060b4bfed4ddc53ce[m
+Author: Jhohan B <jhohantma@gmail.com>
+Date:   Wed May 21 10:14:46 2025 -0500
+
+    Se añade carpeta y elementos de la actualización
+
+[33mcommit 61d8c7c88fb839136cdd1b48494eba089c447304[m
+Author: Tu Nombre <jhohantma@gmail.com>
+Date:   Wed May 14 22:19:14 2025 -0500
+
+    Jhohan, actualización de ruta de referencia del href de inicio de sesion en mi 500.php
+
+[33mcommit 92a9a95ae1b9ad329a73e42c49fad02813cb5fcd[m
+Author: Jhohan <jhohantma@gmail.com>
+Date:   Mon May 12 20:59:57 2025 -0500
+
+    Finalización de estructuración
+
+[33mcommit 0216e67715b353f614f77ba047b753b7aceb7980[m
+Author: Jhohan <jhohantma@gmail.com>
+Date:   Mon May 12 18:06:30 2025 -0500
+
+    Avance en la reestructuración
+
+[33mcommit f108eb9e3b4d38cea3917bb315bbefa3f343bd58[m
+Author: Jhohan <jhohantma@gmail.com>
+Date:   Mon May 12 17:08:02 2025 -0500
+
+    Reestructuración de carpetas
+
+[33mcommit 5895ecaec681921fabb7e04ab23697730036e3b8[m
+Merge: 35424dd e3d0171
+Author: Jhohan <jhohantma@gmail.com>
+Date:   Mon May 12 14:31:14 2025 -0500
+
+    Merge branch 'main' of https://github.com/JhohanBustamante/LaRuta
+
+[33mcommit 35424ddf480f85a53bbaeec3c6873d6d5f7cad65[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Jhohan <jhohantma@gmail.com>
+Date:   Mon May 12 10:25:29 2025 -0500
+
+    Subida de archivos
+
+[33mcommit e3d0171839ddde935fb0df74fd7a5cbb897e73de[m
+Author: JhohanBustamante <jhohantma@gmail.com>
+Date:   Mon May 12 10:09:31 2025 -0500
+
+    Initial commit

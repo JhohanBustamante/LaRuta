@@ -1,0 +1,59 @@
+#seleccionadorContenido a{
+    color: white;
+    font-weight: bold;
+}
+
+div.card {
+    margin-top:20px;
+    height: 450px;
+}
+
+div#seleccionadorContenido{
+        background-color:rgba(18, 113, 168, 0.8);
+}
+
+
+
+
+@media (min-width: 992px) {
+    div.row div#logoComunidad{
+        margin-top: -2px;
+    }
+
+    div.row div#logoComunidad img.card-img-top{
+        height: 300px;
+        width: 300px;
+        margin-left: calc(50% - 150px);
+    }
+    
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    div.row div#logoComunidad{
+        margin-top: -3px;
+    }
+}
+
+@media (max-width: 767px) { 
+    div.row div#logoComunidad{
+        width: 350px;
+        margin-left: calc(50% - 175px);
+    }
+
+    div.row div#logoComunidad img.card-img-top{
+        height: 300px;
+        width: 300px;
+        margin-bottom: 20px;
+        margin-left: calc(50% - 150px);
+        margin-top: calc(50% - 150px);
+    }
+
+    .row div.card img{
+        height: 200px;
+        width: 200px;
+    }
+
+    .row div.card{
+        margin-left: calc(50% - 150px)
+    }
+}
