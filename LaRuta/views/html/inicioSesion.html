@@ -23,27 +23,25 @@
             <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center">
                 <div class="card py-4 color-fondo">
                     <div id="formInicio" class="w-100 px-3 px-md-5">
-                        <form class="row g-3 justify-content-center">
+                        <form class="row g-3 justify-content-center" id="IS-FV-datos">
                             <div class="col-12 text-center">
-                                <h1 id="textoInicio">Iniciar sesión en La Ruta</h1>
+                                <h1 id="textoInicio">Iniciar sesión</h1>
                             </div>
                             <div class="col-12 col-sm-9 col-md-8 col-lg-10">
-                                <input type="text" class="form-control" id="#"
-                                    placeholder="Correo electrónico, usuario o teléfono" required>
+                                <input type="text" id="IS-FV-usuario" class="form-control" id="#"
+                                    placeholder="Correo electrónico o usuario" required>
                             </div>
                             <div class="col-12 col-sm-9 col-md-8 col-lg-10">
-                                <input type="password" class="form-control" id="#" placeholder="Contraseña">
-                            </div>
-                            <div class="col-12 col-sm-9 col-md-8 col-lg-10 text-end">
-                                <a href="..." class="recordar-link">¿Olvidaste tu cuenta?</a>
+                                <input type="password" id="IS-FV-contrasena" class="form-control" id="#" placeholder="Contraseña" required>
                             </div>
                             <div class="col-12 text-center mt-4">
                                 <button class="btn btn-primary px-5 py-2" type="submit">Iniciar Sesión</button>
                             </div>
+                            <div class="col-12 col-sm-9 col-md-8 col-lg-10 text-end">
+                                <a href="..." class="recordar-link">¿Olvidaste tu cuenta?</a>
+                            </div>
                             <div class="col-12 text-center mt-3">
-                                <button id="registrate" class="btn btn-primary" type="submit"><a class="nuevoUsuario"
-                                        href="">Crea una
-                                        cuenta</a></button>
+                                <a class="nuevoUsuario" href="">Crea una cuenta</a>
                             </div>
                         </form>
                     </div>
