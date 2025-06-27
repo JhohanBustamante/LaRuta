@@ -33,6 +33,14 @@ conexionMysql = () => {
 
 conexionMysql();
 
+var verPublicaciones = (tabla) => {
+  return new Promise((resolve, reject) => {
+    conexion.query(`SELECT * FROM ${tabla}`, (error, result) => {
+      return error ? reject(error) : resolve(result);
+    });
+  });
+};
+
 var todos = (tabla) => {
   return new Promise((resolve, reject) => {
     conexion.query(`SELECT * FROM ${tabla}`, (error, result) => {
@@ -80,9 +88,28 @@ var eliminar = (tabla, data) => {
   });
 };
 
+var guardarPublicacion = (tabla, data) => {
+  return new Promise((resolve, reject) => {
+    conexion.query(
+      `INSERT INTO ${tabla} (titulo, descripcion) VALUES (?,?) `,
+      [data.titulo, data.descripcion] ,
+      (error, result) => {
+        return error ? reject(error) : resolve(result);
+      }
+    );
+  });
+};
+
+
+
+
+
+
 module.exports = {
   todos,
   uno,
   crear,
   eliminar,
+  guardarPublicacion,
+  verPublicaciones
 };
