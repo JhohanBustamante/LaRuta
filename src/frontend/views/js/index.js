@@ -1,5 +1,6 @@
 const $formulario = document.getElementById("I-FP-Datos");
 const datosNoPermitidos = ["", undefined, null];
+const publicacionCampo = document.getElementById("publicacion");
 
 let obtenerDatos = () => {
   let datos = {
@@ -51,17 +52,7 @@ let limpiarCampos = () => {
 
 let reflejarDatos = (objeto) => {
   limpiarCampos();
-
-  const publicacion = `<div id="publicacionTitulo" class="col-12">
-                        <h4> ${objeto.titulo} </h4>
-                     </div>
-                     <div id="publicacionContenido" class="col-12">
-                    <p> ${objeto.descripcion} </p>
-                    </div>`;
-
-    enviarDatos(objeto);
-
-  document.getElementById("publicacion").innerHTML = publicacion;
+  enviarDatos(objeto);
 };
 
 let enviarDatos = (objeto) => {
@@ -81,21 +72,56 @@ let enviarDatos = (objeto) => {
 
   fetch("http://localhost:4000/api/usuarios/publicar", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((respuestaBack) => {
+      var respuesta = JSON.parse(respuestaBack);
+    })
     .catch((error) => console.error(error));
 };
 
-let traerDatos = () => {
-  const urlencoded = new URLSearchParams();
-
+let traerDatos = async () => {
   const requestOptions = {
     method: "GET",
-    body: urlencoded,
     redirect: "follow",
   };
 
-  fetch("http://localhost:4000/api/usuarios/publicar/ver", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
+  try {
+    const response = await fetch(
+      "http://localhost:4000/api/usuarios/publicar/ver",
+      requestOptions
+    );
+    const respuestaBack = await response.json();
+    const body = respuestaBack.body;
+    console.log(body);
+    return body; 
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
+
+traerDatos()
+.then((body) => {
+  if (!Array.isArray(body) || body.length === 0) {
+      console.error("Error: 'body' no es un array o está vacío");
+      publicacionCampo.innerHTML = "<p>No hay publicaciones disponibles</p>";
+      return;
+    }
+   let publicacion = "";
+    for (let i = 0; i < body.length; i++) {
+      publicacion += `
+        <div class="publicacion">
+          <div class="titulo">
+            <h4>${body[i].titulo}</h4>
+          </div>
+          <div class="descripcion">
+            <p>${body[i].descripcion}</p>
+          </div>
+        </div>
+      `;
+    }
+    publicacionCampo.innerHTML = publicacion; 
+  })
+  .catch((error) => {
+    console.error("Error al cargar publicaciones:", error);
+    publicacionCampo.innerHTML = "<p>Error al cargar las publicaciones</p>";
+});
