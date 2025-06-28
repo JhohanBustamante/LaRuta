@@ -49,6 +49,10 @@ const registrarUsuario = async (body) => {
   }
 };
 
+const iniciarSesion = async (body) => {
+  
+}
+
 module.exports = {
   todos,
   uno,
