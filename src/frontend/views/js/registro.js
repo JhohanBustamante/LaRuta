@@ -110,7 +110,7 @@ let validarRegistro = async (objeto) => {
       limpiarCampos();
 
        setTimeout(() => {
-        window.location.href = '../html/inicioSesion.html';
+        window.location.href = '../../../../html/inicioSesion.html';
       }, 2000);
     } else {
       if (respuestaBack.body == "apodo") {
