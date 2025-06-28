@@ -6,10 +6,38 @@ const router = express.Router();
 
 router.post("/crear", crear);
 router.get("/", todos);
-router.get("/:id", uno);
+router.get("/:correo", uno);
 router.put("/eliminar", eliminar);
 router.post("/publicar", guardarPublicacion);
 router.get("/publicar/ver", verPublicaciones);
+router.post("/registrar", registrarUsuario);
+
+async function registrarUsuario(request, response, next) {
+  try {
+    const resultado = await controladorUsuarios.registrarUsuario(request.body);
+
+    if (resultado.estado === false && resultado.codigo === "correo") {
+      respuesta.error(
+        request,
+        response,
+        resultado.mensaje || "correo",
+        409
+      );
+    } else if (resultado.estado === false && resultado.codigo === "apodo") {
+      respuesta.error(
+        request,
+        response,
+        resultado.mensaje || "apodo",
+        409
+      );
+    } else {
+      respuesta.success(request, response, "creado" , 201);  // respuesta de que la solicitud está bien
+    }
+  } catch (error) {
+    console.error("Error en registro de usuario:", error);
+    respuesta.error(request, response, "Error interno del servidor", 500);
+  }
+}
 
 async function guardarPublicacion(request, response, next) {
   try {
@@ -46,7 +74,7 @@ async function todos(request, response, next) {
 async function uno(request, response, next) {
   try {
     const items = await controladorUsuarios
-      .uno(parseInt(request.params.id))
+      .uno(request.params.correo)
       .then((items) => {
         respuesta.success(request, response, items, 201);
       });

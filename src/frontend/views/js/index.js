@@ -53,6 +53,7 @@ let limpiarCampos = () => {
 let reflejarDatos = (objeto) => {
   limpiarCampos();
   enviarDatos(objeto);
+  location.reload();
 };
 
 let enviarDatos = (objeto) => {
@@ -71,9 +72,9 @@ let enviarDatos = (objeto) => {
   };
 
   fetch("http://localhost:4000/api/usuarios/publicar", requestOptions)
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((respuestaBack) => {
-      var respuesta = JSON.parse(respuestaBack);
+      console.log(respuestaBack);
     })
     .catch((error) => console.error(error));
 };
@@ -120,6 +121,7 @@ traerDatos()
       `;
     }
     publicacionCampo.innerHTML = publicacion; 
+    
   })
   .catch((error) => {
     console.error("Error al cargar publicaciones:", error);

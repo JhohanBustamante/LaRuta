@@ -49,10 +49,10 @@ var todos = (tabla) => {
   });
 };
 
-var uno = (tabla, id) => {
+var uno = (tabla, correo, atributo) => {
   return new Promise((resolve, reject) => {
     conexion.query(
-      `SELECT * FROM ${tabla} WHERE id = ${id}`,
+      `SELECT * FROM ${tabla} WHERE ${atributo} = "${correo}"`,
       (error, result) => {
         return error ? reject(error) : resolve(result);
       }
@@ -99,10 +99,6 @@ var guardarPublicacion = (tabla, data) => {
     );
   });
 };
-
-
-
-
 
 
 module.exports = {
