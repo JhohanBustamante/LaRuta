@@ -8,22 +8,35 @@
 
 .card {
     height: 500px;
-    padding-bottom: 4rem;
-   overflow-y: auto;
-  overflow-x: hidden;
+    padding-bottom: 1px;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-top: 10px;
-
 }
 
-.btn {
+a.btn-primary {
     width: 95px;
     height: 40px;
-
+    position: absolute;
+    top: 5px;
+}
+.oculto {
+    display:contents;
 }
 
+#contenedorCrear{
+    background-color: #afc8d6ff;
+}
 .btones {
     background-color: azure;
 }
+.form-control{
+    border: solid 1px black;
+}
+.form-control:focus{
+    
+}
+
 
 @media (max-width: 991px) and (min-width: 500px) {
     .mostrarCont {

@@ -16,4 +16,21 @@ var Actdatos = function () {
     else {
         alert("La contraseña no ingresada no coincide, por favor intentelo nuevamente")
     }
+
+    //limpiar()
 }
+
+var actButon = function (){
+    var boton = document.getElementById("verMas")
+    var remplazar= "Ocultar";
+    var mostrar= "Ver más"
+    if(boton.innerHTML.trim()===mostrar){
+        boton.innerHTML=remplazar
+    } else{
+        boton.innerHTML=mostrar
+    }
+}
+
+/*var limpiar= function(){
+    document.getElementById("Campo").innerHTML = "";
+}*/
