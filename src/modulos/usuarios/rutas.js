@@ -4,34 +4,43 @@ const controladorUsuarios = require("./controlador");
 
 const router = express.Router();
 
+router.post("/publicar", guardarPublicacion);
+router.get("/publicar/ver", verPublicaciones);
+
+router.post("/iniciar", iniciarSesion);
+// Esta función permite al usuario enviar datos para  validar las credenciales de inicio y dar acceso a la aplicación
+
 router.post("/crear", crear);
 router.get("/", todos);
 router.get("/:correo", uno);
 router.put("/eliminar", eliminar);
-router.post("/publicar", guardarPublicacion);
-router.get("/publicar/ver", verPublicaciones);
 router.post("/registrar", registrarUsuario);
+
+async function iniciarSesion(request, response) {
+  try {
+    const resultado = await controladorUsuarios.iniciarSesion(request.body);
+
+    if (resultado.estado === false && resultado.mensaje == "contrasena") {
+      respuesta.error(request, response, "contrasena", 409);
+    } else if (resultado.estado === false && resultado.mensaje == "usuario") {
+      respuesta.error(request, response, "correo o apodo mal", 409);
+    } else if (resultado.estado === true && resultado.mensaje == "ok") {
+      respuesta.error(request, response, "iniciado", 409);
+    }
+    console.log(resultado);
+  } catch (error) {}
+}
 
 async function registrarUsuario(request, response, next) {
   try {
     const resultado = await controladorUsuarios.registrarUsuario(request.body);
 
-    if (resultado.estado === false && resultado.codigo === "correo") {
-      respuesta.error(
-        request,
-        response,
-        resultado.mensaje || "correo",
-        409
-      );
-    } else if (resultado.estado === false && resultado.codigo === "apodo") {
-      respuesta.error(
-        request,
-        response,
-        resultado.mensaje || "apodo",
-        409
-      );
+    if (resultado.estado === false && resultado.mensaje === "correo") {
+      respuesta.error(request, response, resultado.mensaje || "correo", 409);
+    } else if (resultado.estado === false && resultado.mensaje === "apodo") {
+      respuesta.error(request, response, resultado.mensaje || "apodo", 409);
     } else {
-      respuesta.success(request, response, "creado" , 201);  // respuesta de que la solicitud está bien
+      respuesta.success(request, response, "creado", 201); // respuesta de que la solicitud está bien
     }
   } catch (error) {
     console.error("Error en registro de usuario:", error);
@@ -44,9 +53,10 @@ async function guardarPublicacion(request, response, next) {
     const items = await controladorUsuarios
       .guardarPublicacion(request.body)
       .then((items) => {
-        respuesta.success(request, response, "Publicado con éxito", 200);
+        respuesta.success(request, response, "Publicado", 200);
       });
   } catch (error) {
+    console.log("error en validación");
     next(error);
   }
 }

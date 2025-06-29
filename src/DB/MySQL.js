@@ -33,14 +33,6 @@ conexionMysql = () => {
 
 conexionMysql();
 
-var verPublicaciones = (tabla) => {
-  return new Promise((resolve, reject) => {
-    conexion.query(`SELECT * FROM ${tabla}`, (error, result) => {
-      return error ? reject(error) : resolve(result);
-    });
-  });
-};
-
 var todos = (tabla) => {
   return new Promise((resolve, reject) => {
     conexion.query(`SELECT * FROM ${tabla}`, (error, result) => {
@@ -49,10 +41,21 @@ var todos = (tabla) => {
   });
 };
 
-var uno = (tabla, correo, atributo) => {
+var uno = (tabla, valor, atributo) => {
   return new Promise((resolve, reject) => {
     conexion.query(
-      `SELECT * FROM ${tabla} WHERE ${atributo} = "${correo}"`,
+      `SELECT * FROM ${tabla} WHERE ${atributo} = "${valor}"`,
+      (error, result) => {
+        return error ? reject(error) : resolve(result);
+      }
+    );
+  });
+};
+
+var varios = (tabla, valorUno, valorDos) => {
+  return new Promise((resolve, reject) => {
+    conexion.query(
+      `SELECT * FROM ${tabla} WHERE (correo="${valorUno}" OR apodo ="${valorUno}") AND contrasena="${valorDos}"`,
       (error, result) => {
         return error ? reject(error) : resolve(result);
       }
@@ -88,10 +91,18 @@ var eliminar = (tabla, data) => {
   });
 };
 
+var verPublicaciones = (tabla) => {
+  return new Promise((resolve, reject) => {
+    conexion.query(`SELECT * FROM ${tabla}`, (error, result) => {
+      return error ? reject(error) : resolve(result);
+    });
+  });
+};
+
 var guardarPublicacion = (tabla, data) => {
   return new Promise((resolve, reject) => {
     conexion.query(
-      `INSERT INTO ${tabla} (titulo, descripcion) VALUES (?,?) `,
+      `INSERT INTO ${tabla} (titulo, descripcion) VALUES (?,?)`,
       [data.titulo, data.descripcion] ,
       (error, result) => {
         return error ? reject(error) : resolve(result);
@@ -100,6 +111,7 @@ var guardarPublicacion = (tabla, data) => {
   });
 };
 
+var buscarRol = ()=>{}
 
 module.exports = {
   todos,
@@ -107,5 +119,7 @@ module.exports = {
   crear,
   eliminar,
   guardarPublicacion,
-  verPublicaciones
+  verPublicaciones,
+  varios,
+  buscarRol
 };

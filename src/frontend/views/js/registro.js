@@ -7,7 +7,6 @@ const datosNoPemitidos = ["", null, undefined];
 
 $formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-
   validarDatos(obtenerDatos());
 });
 
@@ -43,13 +42,13 @@ let validarDatos = (objeto) => {
       dato == objeto.contrasenaDos
   );
   existencia >= 0
-    ? alerta("Ingresa todos los datos requeridos 1 ", "error")
+    ? alerta("Ingresa todos los datos requeridos", "error")
     : objeto.nombre.trim().length < 1 ||
       objeto.apellido.trim().length < 2 ||
       objeto.correo.trim().length < 7 ||
       objeto.contrasena.trim().length < 10 ||
       objeto.contrasenaDos.trim().length < 10
-    ? alerta("Ingresa datos válidos en los datos requeridos 2", "error")
+    ? alerta("Ingresa datos válidos en los datos requeridos", "error")
     : !validacionNombreUsuario.test(objeto.nombreUsuario)
     ? alerta("El nombre de usuario no es válido", "error")
     : !validacionCorreo.test(objeto.correo)
@@ -100,26 +99,20 @@ let enviarDatos = async (objeto) => {
 };
 
 let validarRegistro = async (objeto) => {
-
   try {
     const respuestaBack = await enviarDatos(objeto);
-    console.log(respuestaBack)
+    console.log(respuestaBack);
 
-    if (respuestaBack.body=="creado") {
-      alerta("¡Registro exitoso! ","success");
+    if (respuestaBack.body == "apodo") {
+      alerta("Apodo en uso, prueba otro", "error");
+    } else if (respuestaBack.body == "correo") {
+      alerta("Correo en uso, prueba otro", "error");
+    } else if (respuestaBack.body == "creado"){
+      alerta("¡Registro exitoso! ", "success");
       limpiarCampos();
-
        setTimeout(() => {
-        window.location.href = '../../../../html/inicioSesion.html';
+        window.location.href = '../../../../index.html';
       }, 2000);
-    } else {
-      if (respuestaBack.body == "apodo") {
-        alerta("Apodo en uso, prueba otro", "error");
-      } else if (respuestaBack.body == "correo") {
-        alerta("Correo en uso, prueba otro", "error");
-      } else {
-        alerta("Error de validación interno","error")
-      }
     }
   } catch (error) {
     console.error("Error al procesar el registro:", error);

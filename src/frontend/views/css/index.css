@@ -84,3 +84,9 @@ form div.col-6 {
 #publicacion div.publicacion{
   color: black
 }
+
+.card {
+    width: 350px !important;
+    margin-left: calc(50% - 175px);
+    margin-bottom: 30px;
+}

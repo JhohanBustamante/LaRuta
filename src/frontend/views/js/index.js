@@ -1,21 +1,19 @@
 const $formulario = document.getElementById("I-FP-Datos");
-const datosNoPermitidos = ["", undefined, null];
 const publicacionCampo = document.getElementById("publicacion");
+const datosNoPermitidos = ["", undefined, null];
+
+$formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+  obtenerDatos();
+});
 
 let obtenerDatos = () => {
   let datos = {
     titulo: document.getElementById("I-IT-Dato").value,
     descripcion: document.getElementById("I-IC-Dato").value,
   };
-
   validarDatos(datos);
-  //reflejarDatos(datos);
 };
-
-$formulario.addEventListener("submit", (event) => {
-  event.preventDefault();
-  obtenerDatos();
-});
 
 let alerta = (mensaje, icono) => {
   Swal.fire({
@@ -36,10 +34,10 @@ let validarDatos = (objeto) => {
   ];
 
   existencia >= 0
-    ? alerta("Agrega todos los campos", "error")
+    ? alerta("Agrega todos los campos.", "error")
     : longitud[0] <= 5 || longitud[1] <= 10
     ? alerta(
-        "Titulo debe tener más de 5 caracteres y descripción, más de 10",
+        "Título debe tener más de 5 caracteres y descripción, más de 10",
         "error"
       )
     : reflejarDatos(objeto);
@@ -104,20 +102,19 @@ traerDatos()
 .then((body) => {
   if (!Array.isArray(body) || body.length === 0) {
       console.error("Error: 'body' no es un array o está vacío");
-      publicacionCampo.innerHTML = "<p>No hay publicaciones disponibles</p>";
+      publicacionCampo.innerHTML = "<h5> No hay publicaciones disponibles </h5>";
       return;
     }
    let publicacion = "";
     for (let i = 0; i < body.length; i++) {
       publicacion += `
-        <div class="publicacion">
-          <div class="titulo">
-            <h4>${body[i].titulo}</h4>
-          </div>
-          <div class="descripcion">
-            <p>${body[i].descripcion}</p>
-          </div>
-        </div>
+            <div class="card" style="width: 18rem;">
+                <img src="../../resources/publicacion.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title titulo">${body[i].titulo}</h5>
+                    <p class="card-text descripcion">${body[i].descripcion}</p>
+                </div>
+            </div>
       `;
     }
     publicacionCampo.innerHTML = publicacion; 
@@ -125,5 +122,5 @@ traerDatos()
   })
   .catch((error) => {
     console.error("Error al cargar publicaciones:", error);
-    publicacionCampo.innerHTML = "<p>Error al cargar las publicaciones</p>";
+    publicacionCampo.innerHTML = "<p> Error al cargar las publicaciones </p>";
 });
