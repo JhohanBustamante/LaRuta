@@ -54,7 +54,7 @@ input{
    margin-bottom: 10px;
    border-radius: 20px;
 }
-#Campo{
+.form-control{
    border: solid 1px black;
 }
 
