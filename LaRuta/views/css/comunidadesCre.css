@@ -1,0 +1,34 @@
+.card {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 600px;
+}
+
+#pills-home-tab:hover {
+    background-color: aliceblue;
+}
+
+#pills-profile-tab:hover {
+    background-color: aliceblue;
+}
+
+#pills-metricas-tab:hover {
+    background-color: aliceblue;
+}
+
+@media (max-width: 767px) {
+    #pills-home-tab {
+        width: 250px;
+        margin-left: calc(50% - 125px);
+    }
+
+    #pills-profile-tab {
+        width: 250px;
+        margin-left: calc(50% - 125px);
+    }
+
+    #pills-metricas-tab {
+        width: 250px;
+        margin-left: calc(50% - 125px);
+    }
+}

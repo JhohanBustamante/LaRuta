@@ -2,9 +2,9 @@ var confirmacion = function () {
 
     var usuario = document.getElementById("IS-FV-usuario").value.trim();
     var contrasena = document.getElementById("IS-FV-contrasena").value.trim();
-    const usuarioGuardado = localStorage.getItem("usuarioGuardado")
-    const correoGuardado = localStorage.getItem("correoGuardado")
-    const contrasenaGuardada = localStorage.getItem("contrasenaGuardada")
+    var usuarioGuardado = localStorage.getItem("usuarioGuardado")
+    var correoGuardado = localStorage.getItem("correoGuardado")
+    var contrasenaGuardada = localStorage.getItem("contrasenaGuardada")
     var datosNoPermitidos = ["", null, undefined];
     console.log(usuario)
     var NumeroUsuario= datosNoPermitidos.findIndex ((dato)=> dato == usuario);
@@ -13,18 +13,25 @@ var confirmacion = function () {
     console.log(usuarioGuardado)
     console.log(correoGuardado)
     console.log(contrasenaGuardada)
-
+    
 
     if (NumeroUsuario >= 0){
-        alert ("Campo de usuario ingresado vacio")
+        alerta ("Campo de usuario ingresado vacio","error")
     }else if (NumeroContrasena >= 0){
-        alert ("Campo de contraseña ingresada esta vacio")
-    }else if ((usuario == usuarioGuardado || usuario== correoGuardado && contrasena == contrasenaGuardada)){
-        alert ("Inicio de sesión exitoso")
+        alerta ("Campo de contraseña ingresada esta vacio","error")
+    }else if ((usuario == usuarioGuardado || usuario== correoGuardado) && contrasena == contrasenaGuardada){
+        alerta ("Inicio de sesión exitoso","sucess")
         setTimeout(() => {
-        window.location.href = '../html/blogComunidad.html';
+        window.location.href = '../html/index.html';
       }, 2000);
     }else{
-        alert("Usuario o contraseña ingresada incorrecto")
+        alerta("Usuario o contraseña incorrectos","error")
     }
 }
+let alerta = (mensaje, icono) => {
+  Swal.fire({
+    title: mensaje,
+    icon: icono,
+    draggable: true,
+  });
+};
