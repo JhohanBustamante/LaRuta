@@ -14,14 +14,22 @@
             <div class="col-12 col-md-8 col-lg-6">
                 <div class="card carta-recuperacion" id="card-re">
                     <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Recuperar Contraseña</h2>
+                        <h2 class="card-title text-center mb-">Recuperar Contraseña</h2>
                         <p class="card-text text-center mb-4">
                             Ingresa tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
                         </p>
                         <form>
-                            <div class="mb-3">
+                            <div class="mb-2">
                                 <label for="emailInput" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="alguien@example.com" required>
+                                <input type="email" class="form-control" id="email" placeholder="alguien@example.com" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="emailInput" class="form-label">Ingrese el código</label>
+                                <input type="text" class="form-control" id="codigo">
+                            </div>
+                            <div class="mb-2">
+                                <label for="emailInput" class="form-label">Ingrese la nueva contraseña</label>
+                                <input type="password" class="form-control" id="contrasena-nueva">
                             </div>
                             <div class="d-grid gap-2 mt-4">
                                 <button type="submit" class="btn btn-primary btn-lg">Enviar Enlace de Recuperación</button>

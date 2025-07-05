@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f9fa;
+    background: linear-gradient(120deg, #d4e6f1, rgb(18, 113, 168));
     display: flex;
     justify-content: center;
     align-items: center;
