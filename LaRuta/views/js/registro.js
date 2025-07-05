@@ -20,44 +20,52 @@ var validarRegistro = function () {
     newContrasena2= noPerminido.findIndex((dato)=> dato==contrasena2)
 
     if (newNombre>= 0){
-        alert ("El nombre ingresado esta vacio")
+        alerta ("El nombre ingresado esta vacio", "error")
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (nombre)){
-        alert ("El nombre de usuario no es válido")
+        alerta ("El nombre de usuario no es válido", "error")
     }else if (newSegNo>= 0){
-        alert ("El segundo nombre ingresado esta vacio")
+        alerta ("El segundo nombre ingresado esta vacio", "error")
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (segundoNom)){
-        alert ("El segundo nombre de usuario no es válido")
+        alerta ("El segundo nombre de usuario no es válido", "error")
     }else if (newApellido>= 0){
-        alert ("El apellido ingresado esta vacio")
+        alerta ("El apellido ingresado esta vacio", "error")
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (apellido)){
-        alert ("El segundo nombre de usuario no es válido")
+        alerta ("El segundo nombre de usuario no es válido", "error")
     }else if (newSegApellido>=0){
-        alert ("El segundo apellido ingresado esta vacio")
+        alerta ("El segundo apellido ingresado esta vacio", "error")
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (apellido2)){
-        alert ("El segundo apellido ingresado no es válido")
+        alerta ("El segundo apellido ingresado no es válido", "error")
     }else if (newUsuario>=0){
-        alert ("El usuario ingresado esta vacio")
+        alerta ("El usuario ingresado esta vacio", "error")
     }else if (!/^[a-zA-Z0-9_]{4,16}$/.test (usuario)){
-        alert ("El usuario ingresado no es válido")
+        alerta ("El usuario ingresado no es válido", "error")
     }else if (newCorreo>=0){
-        alert ("El correo ingresado esta vacio")
+        alerta ("El correo ingresado esta vacio", "error")
     }else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test (correo)){
-        alert ("El correo ingresado no es válido")
+        alerta ("El correo ingresado no es válido", "error")
     }else if (newContrasena1>=0){
-        alert ("El el campo de contraseña esta vacio")
+        alerta ("El el campo de contraseña esta vacio", "error")
     }else if (!/^(?=(.*[a-z]){2,})(?=(.*[A-Z]){1,})(?=(.*\d){2,})[a-zA-Z\d]{10,15}$/.test (contrasena1)){
-        alert ("La contraseña ingresado no es válido")
+        alerta ("La contraseña ingresado no es válida", "error")
     }else if (newContrasena2>=0){
-        alert ("El el campo de verificar su contraseña esta vacio")
+        alerta ("El el campo de verificar su contraseña esta vacio", "error")
     }else if (contrasena1 !==contrasena2){
-        alert ("Las contraseñas no coinciden")
+        alerta ("Las contraseñas no coinciden", "error")
     }else {
-        alert ("¡Se ha registrado exitosamente!")
+        alerta ("¡Se ha registrado exitosamente!", "success")
         localStorage.setItem("usuarioGuardado", usuario);
         localStorage.setItem("correoGuardado", correo);
         localStorage.setItem("contrasenaGuardada", contrasena2);
         setTimeout(() => {
-        window.location.href = '../html/inicioSesion.html';
+        window.location.href = '../html/Activacion.html';
       }, 2000);
       }
     };
+
+    let alerta = (mensaje, icono) => {
+  Swal.fire({
+    title: mensaje,
+    icon: icono,
+    draggable: true,
+  });
+};

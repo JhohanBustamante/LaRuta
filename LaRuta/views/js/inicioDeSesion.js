@@ -20,7 +20,7 @@ var confirmacion = function () {
     }else if (NumeroContrasena >= 0){
         alerta ("Campo de contraseña ingresada esta vacio","error")
     }else if ((usuario == usuarioGuardado || usuario== correoGuardado) && contrasena == contrasenaGuardada){
-        alerta ("Inicio de sesión exitoso","sucess")
+        alerta ("Inicio de sesión exitoso","success")
         setTimeout(() => {
         window.location.href = '../html/index.html';
       }, 2000);
