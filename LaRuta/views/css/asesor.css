@@ -1,0 +1,24 @@
+
+body {
+    background-color: rgba(18, 113, 168, 0.23);
+    font-family: 'Open Sans';
+    background-image: url(gym.png);
+}
+
+body nav.navbar {
+    background-color: rgb(18, 113, 168) !important;
+}
+
+body nav.navbar a#tituloNav {
+    margin-left: 50px;
+}
+
+body nav.navbar img {
+    margin-left: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.col-custom{
+    background: linear-gradient(120deg, #d4e6f1, rgb(115, 159, 185));
+}

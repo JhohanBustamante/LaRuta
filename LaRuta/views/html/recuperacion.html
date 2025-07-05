@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/recuperacion.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card carta-recuperacion" id="card-re">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Recuperar Contraseña</h2>
+                        <p class="card-text text-center mb-4">
+                            Ingresa tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
+                        </p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="alguien@example.com" required>
+                            </div>
+                            <div class="d-grid gap-2 mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar Enlace de Recuperación</button>
+                                <a href="../html/inicioSesion.html" class="btn btn-link">Volver al inicio de sesión</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+</html>
