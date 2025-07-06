@@ -1,9 +1,0 @@
-{
-    "ventas": [
-    { "mes": "Enero", "cantidad": 120, "costo": 10 },
-    { "mes": "Febrero", "cantidad": 150, "costo": 20 },
-    { "mes": "Marzo", "cantidad": 90, "costo": 50 },
-    { "mes": "Abril", "cantidad": 200, "costo": 5 },
-    { "mes": "Mayo", "cantidad": 170, "costo": 10 }
-    ]
-    }
