@@ -28,6 +28,7 @@ body div.container div.card div.text-bg-light {
 #botonDtPv1{
    margin-left: 15px;
 }
+
 #CardMostrarDatos{
       border: 0px;
 }
@@ -225,4 +226,10 @@ input{
    .row {
       width: 100%;
    }
+   #botonDtPv2{
+   margin-left: 15px;
+}
+#botonDtPv1{
+   margin-bottom: 5px;
+}
 }
