@@ -20,21 +20,15 @@ var validarRegistro = function () {
     newContrasena2= noPerminido.findIndex((dato)=> dato==contrasena2)
 
     if (newNombre>= 0){
-        alerta ("El nombre ingresado esta vacio", "error")
+        alerta ("El nombre ingresado está vacío", "error")
+        return false
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (nombre)){
         alerta ("El nombre de usuario no es válido", "error")
-    }else if (newSegNo>= 0){
-        alerta ("El segundo nombre ingresado esta vacio", "error")
-    }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (segundoNom)){
-        alerta ("El segundo nombre de usuario no es válido", "error")
+        return false
     }else if (newApellido>= 0){
-        alerta ("El apellido ingresado esta vacio", "error")
+        alerta ("El apellido ingresado está vacío", "error")
     }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (apellido)){
-        alerta ("El segundo nombre de usuario no es válido", "error")
-    }else if (newSegApellido>=0){
-        alerta ("El segundo apellido ingresado esta vacio", "error")
-    }else if (!/^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]{2,30}$/.test (apellido2)){
-        alerta ("El segundo apellido ingresado no es válido", "error")
+        alerta ("El apellido ingresado no es válido", "error")
     }else if (newUsuario>=0){
         alerta ("El usuario ingresado esta vacio", "error")
     }else if (!/^[a-zA-Z0-9_]{4,16}$/.test (usuario)){
