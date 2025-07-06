@@ -29,7 +29,7 @@ var Actdatos = function () {
         alert ("La contraseña ingresada esta vacia")
     }
     
-    else if (contrasena == "KevinAlejandro_2524") {
+    else if (contrasena == localStorage.getItem("contrasenaGuardada")) {
         alert("Se han actualizado sus datos de usuario")
         document.getElementById("nombreUser").innerHTML = newNombre;
 
