@@ -22,7 +22,7 @@ var confirmacion = function () {
     }else if ((usuario == usuarioGuardado || usuario== correoGuardado) && contrasena == contrasenaGuardada){
         alerta ("Inicio de sesión exitoso","success")
         setTimeout(() => {
-        window.location.href = '../views/html/index.html';
+        window.location.href = '../html/index.html';
       }, 2000);
     }else{
         alerta("Usuario o contraseña incorrectos","error")
